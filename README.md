@@ -16,17 +16,15 @@ This repo compares the performance of different 2d-linear-algebra (2d vectors) i
 
 # Result
 
-Use a `Tuple` if you want to do 2d vector math in Elm!
+Use a `Tuple` if you want to do 2d vector math for everything other than WebGL in Elm!
 
 # Implementations
 
 ## elm-explorations/linear-algebra
 
-This Package uses [elm-explorations/linear-algebra](https://package.elm-lang.org/packages/elm-explorations/linear-algebra/latest/).
+This Package uses [elm-explorations/linear-algebra](https://package.elm-lang.org/packages/elm-explorations/linear-algebra/latest/) and FFIs the [webgl-mjs](https://code.google.com/archive/p/webgl-mjs/) library.
 
-It FFIs tme [webgl-mjs](https://code.google.com/archive/p/webgl-mjs/) library.
-
-However, for 2D-LinA this was the slowest implementation.
+However, for 2d vector operations, this is the _slowest_ implementation.
 
 ## ADT
 
