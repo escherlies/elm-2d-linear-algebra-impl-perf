@@ -12,6 +12,7 @@ This repo compares the performance of different 2d-linear-algebra (2d vectors) i
 - [Usage](#usage)
 - [Results](#results)
   - [Apple M1](#apple-m1)
+  - [Linux x86_64](#linux-x86_64)
 
 
 # Result
@@ -77,3 +78,11 @@ type alias Vec2 =
 | Safari  | VecRecord      | 8,059,167     | 99.05%          |        |
 | Safari  | VecTuple       | 12,414,330    | 99.26%          | *      |
 
+## Linux x86_64
+
+| Browser | Implementation | Runs / second | Goodness of fit | Winner |
+| ------- | -------------- | ------------- | --------------- | ------ |
+| Firefox | Vec            | 2,091,805     | 99.86%          |        |
+| Firefox | VecADT         | 18,715,485    | 99.48%          |        |
+| Firefox | VecRecord      | 10,560,354    | 99.59%          |        |
+| Firefox | VecTuple       | 25,889,075    | 99.81%          | *      |
