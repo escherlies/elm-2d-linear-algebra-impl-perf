@@ -1,8 +1,8 @@
-# elm-2d-linear-algebra-impl-perf
+# elm-linear-algebra-impl-perf
 
-This repo compares the performance of different 2d-linear-algebra (2d vectors) implementations.
+This repo compares the performance of different linear-algebra/vector implementations.
 
-- [elm-2d-linear-algebra-impl-perf](#elm-2d-linear-algebra-impl-perf)
+- [elm-linear-algebra-impl-perf](#elm-linear-algebra-impl-perf)
 - [Result](#result)
 - [Implementations](#implementations)
   - [elm-explorations/linear-algebra](#elm-explorationslinear-algebra)
@@ -17,7 +17,9 @@ This repo compares the performance of different 2d-linear-algebra (2d vectors) i
 
 # Result
 
-Use a `Tuple` if you want to do 2d vector math for everything other than WebGL in Elm!
+Use an `ADT` if you want to do vector math for everything other than WebGL in Elm!
+
+It is more descriptive and has the best performance.
 
 # Implementations
 
@@ -25,7 +27,7 @@ Use a `Tuple` if you want to do 2d vector math for everything other than WebGL i
 
 This Package uses [elm-explorations/linear-algebra](https://package.elm-lang.org/packages/elm-explorations/linear-algebra/latest/) and FFIs the [webgl-mjs](https://code.google.com/archive/p/webgl-mjs/) library.
 
-However, for 2d vector operations, this is the _slowest_ implementation.
+However, for plain vector operations, this is the _slowest_ implementation.
 
 ## ADT
 
@@ -56,8 +58,9 @@ type alias Vec2 =
 2. `elm reactor`
 3. Go to `http://localhost:8000/benchmarks/Suite.elm`
 
-
 # Results
+
+Although in firefox the performance is ~25% slower for the ADT compared to tuples, they still have significant more advantages.
 
 ## Darwin arm64 (Apple M1 Mac)
 
