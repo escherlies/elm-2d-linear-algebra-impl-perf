@@ -18,16 +18,25 @@ vecFloat =
 suite : Benchmark
 suite =
     describe "Implementation"
-        [ Benchmark.compare "Vec Int vs Vec Float"
-            "Int"
-            (\_ -> VecADTGeneral.add vecInt vecInt)
-            "Float"
+        -- [ Benchmark.compare "Vec Int vs Vec Float"
+        --     "Int"
+        --     (\_ -> VecADTGeneral.add vecInt vecInt)
+        --     "Float"
+        --     (\_ -> VecADTGeneral.add vecFloat vecFloat)
+        -- , Benchmark.compare "Vec Int vs Vec Float"
+        --     "Int"
+        --     (\_ -> VecADTGeneral.scale 3 vecInt)
+        --     "Float"
+        --     (\_ -> VecADTGeneral.scale 3 vecFloat)
+        [ benchmark
+            "Add2 (lift2 (+))"
+            (\_ -> VecADTGeneral.add2 vecFloat vecFloat)
+        , benchmark
+            "Add"
             (\_ -> VecADTGeneral.add vecFloat vecFloat)
-        , Benchmark.compare "Vec Int vs Vec Float"
-            "Int"
-            (\_ -> VecADTGeneral.scale 3 vecInt)
-            "Float"
-            (\_ -> VecADTGeneral.scale 3 vecFloat)
+        , benchmark
+            "Add3"
+            (\_ -> VecADTGeneral.add3 vecFloat vecFloat)
         ]
 
 
